@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obsticle : MonoBehaviour
 {
+    private bool isTimeStopped = false;
     private GameObject player;
     void Start()
     {
@@ -21,6 +22,8 @@ public class Obsticle : MonoBehaviour
         if (collision.tag == "Player")
         {
             Destroy(player.gameObject);
+            Time.timeScale = 0;
+            isTimeStopped = true;
         }
     }
 }
